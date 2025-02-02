@@ -27,7 +27,7 @@ var isValid = function(s) {
     return true*/
 
     // 由于连续的一一对应,所以可以用栈
-    /*const stack = []
+    const stack = []
     const pairs={
         '(':')',
         '[':']',
@@ -38,12 +38,12 @@ var isValid = function(s) {
         if (pairs[char]) {
             stack.push(pairs[char]);
         } else {
-            if(stack.length === 0 || stack.pop()!==s[i]) {
+            if(stack.length === 0 || stack.pop()!==s[i]) {//我曹,多一个||时间翻倍,3ms变成7ms,服了
                 return false;
             }
         }
     }
-    return !stack.length;*/
+    return !stack.length;
 
 };
 console.log(isValid("([)]"));
