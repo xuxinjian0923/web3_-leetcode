@@ -18,3 +18,7 @@ BFF是传统web2.0的技术,可以用node或者Spring boot去写
 
 SFF
 没有状态的接口,不需要买单独的服务器,按照
+
+硬链
+![img.png](static/硬链接理解.png)
+yarn要锁住1.22.19,(pnpm不能上aws的部署)
