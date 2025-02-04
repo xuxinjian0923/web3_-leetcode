@@ -1,11 +1,12 @@
 const pro = new Promise((resolve, reject) => {
     const innerpro = new Promise((r, reject) => {
         setTimeout(() => {
-            console.log(666)
+            // console.log(666)
             r(1)
         });
         console.log(2)
         r(3)
+        r(999)//谁先resolve,剩下的就不管了
     })
     resolve(4)
     innerpro.then(res=>console.log(res)  )
