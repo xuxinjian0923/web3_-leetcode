@@ -15,7 +15,7 @@ contract Demo {
         // msg.value 就是用转账过来的金额
         balance += msg.value;
 
-        Deposit(owner, 0);
+        Deposit(owner, msg.value);
 
     }
 
