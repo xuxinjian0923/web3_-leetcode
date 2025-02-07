@@ -1,13 +1,35 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html lang="ch">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>单例测试</title>
 </head>
 <body>
-<script src="./06-01-两数相加.js"></script>
+<script>
+    // 模拟模块化的 auth
+    const auth = (function() {
+        const handler = (error) => {
+            console.log('处理错误');
+        };
+        handler.active = false;
+        return handler;
+    })();
+
+    // 添加两个按钮
+    const btn1 = document.createElement('button');
+    btn1.textContent = '查看状态';
+    btn1.onclick = function() {
+        console.log('当前 auth.active:', auth.active);
+    };
+
+    const btn2 = document.createElement('button');
+    btn2.textContent = '修改状态';
+    btn2.onclick = function() {
+        auth.active = true;
+        console.log('修改后 auth.active:', auth.active);
+    };
+
+    document.body.appendChild(btn1);
+    document.body.appendChild(btn2);
+</script>
 </body>
 </html>
