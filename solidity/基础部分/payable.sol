@@ -20,7 +20,7 @@ contract_demo {// 貔貅盘
         // 当前取钱的人不是管理员 不让你取
         require(msg.sender == owner, "you are not the owner")//这个require tm不是人,第一个参数是正常的时候,第二个是不满足条件的时候的提示
         require(balance >= _num, "Insuffcient balance ")
-        payable(_to).transfer(_num);
+        payable(_to).transfer(_num);//transfer应该就是币安的划转
         // 两个账户之间转账 直接通过加减来完成
         // ETH的UTXO模型 address(this).balance
         balance -= num;
